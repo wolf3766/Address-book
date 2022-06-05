@@ -1,0 +1,41 @@
+.paginate{
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.search{
+  text-align: center;
+}
+  .paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #EB5353;
+    color: #FF6464;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color: whitesmoke;
+    background-color: #5FD068;
+  }
+  
+  .paginationActive a {
+    color: #B6FFCE;
+    background-color: #B6FFCE;
+  }
+  
+  .paginationDisabled a {
+    color: white;
+    background-color: #990000;
+  }
