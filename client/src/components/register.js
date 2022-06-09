@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "../styles/login.css"
 
 function Register(){
     const [user,setuser]=useState({ //storing current user details
@@ -25,7 +26,9 @@ function Register(){
     }
 
     return( //form to accept data from the user
-       <div>
+       <div className="main">
+        <h2>Register New User </h2> 
+
         <form onSubmit={handlesubmit}>
         <div class="form-row">
     <div class="form-group ">

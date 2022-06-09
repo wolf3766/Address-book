@@ -1,9 +1,11 @@
 import axios  from "axios"
+import "../styles/login.css"
 import { useEffect, useState } from "react"
-
+import {useNavigate} from "react-router-dom"
 
 function Login(){
     axios.defaults.withCredentials=true;
+     const nav= useNavigate();
 
     const [usercred,setusercred]=useState({ //state variable to store credentials
         "Email":"",
@@ -26,32 +28,24 @@ function Login(){
         .then(Response=>{
                // console.log(Response);
                 localStorage.setItem("token",Response.data.token);
+                nav("/add")
         })
     }
 
-    const handleauth= async(e)=>{ //handling auth to check if user is authenticated or not
-        e.preventDefault();
-       
-       await axios.get("http://localhost:8080/auth",{ // getting current user data from backend
-           headers:{
-               "x-access-token":localStorage.getItem("token")
-           }
-       })
-        .then(Response=>{
-            console.log(Response);
-
-        })
-    }
+        const handlesignup =(e)=>{
+            nav("/register")
+        }
 
     useEffect(()=>{ //checking if user is logged in or not
         axios.get("http://localhost:8080/login") 
        .then(Response=>{
-          // console.log(Response);  
+           console.log(Response);  
        }) 
     },[])
 
     return( //form to take data from user
-        <div>
+        <div className="main">
+        <h2>Log In</h2>
         <form onSubmit={handlesubmit}>
         <div class="form-row">
     <div class="form-group ">
@@ -64,11 +58,11 @@ function Login(){
     <input type="password" class="form-control" name="Password" placeholder="Password" onChange={handlechange} />
   </div>
   <button type="submit" onClick={handlesubmit} class="btn btn-primary">Login</button>
-  
-
         </form>
-        <button onClick={handleauth}>authenticated</button>
-
+        <div className=" register">
+        <h6>Register with us </h6>
+       <button  class="btn btn-secondary" onClick={handlesignup}>Register</button> 
+        </div>
        </div> 
     )
 }

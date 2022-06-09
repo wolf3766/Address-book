@@ -14,7 +14,7 @@ function Contacts(){
     const [formdata,setformdata]=useState({"NAME":""}); // statevariable to store variable to be searched 
     const [editcontactid,seteditcontactid]=useState(null); // statevariable to store variable id to be edit 
     
-    const [editformdata,seteditformdata]=useState({ // statevariable to store data after editing
+    const [editformdata,seteditformdata]=useState({ // state variable to store data after editing
         "_id":"",
         "Name":"",
         "address":"",

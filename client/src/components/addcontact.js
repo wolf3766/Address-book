@@ -40,6 +40,7 @@ function Addcontact(){
         })
         .then(response=>{
             console.log("post",response);
+            nav("/contact");
         });
     }
 
@@ -60,7 +61,7 @@ function Addcontact(){
   <div class="form-row">
     <div class="form-group ">
       <label for="Name">Name</label>
-      <input type="String" class="form-control" name="Name" placeholder="Name"  onChange={handlechange} />
+      <input type="text" class="form-control" name="Name" placeholder="Name"  onChange={handlechange} />
     </div>
   </div>
   <div class="form-group">
@@ -68,18 +69,18 @@ function Addcontact(){
     <input type="text" class="form-control" name="address" placeholder="address"  onChange={handlechange}/>
   </div>
   
-  <div class="form-row">
+  <div className="sec">
     <div class="form-group ">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" name="city" onChange={handlechange} />
+      <input type="text" class="form-control" name="city" placeholder="City" onChange={handlechange} />
     </div>
     <div class="form-group ">
     <label for="inputState">State</label>
-      <input type="text" class="form-control" name="state" onChange={handlechange} />
+      <input type="text" class="form-control" name="state" placeholder="State" onChange={handlechange} />
     </div>
     <div class="form-group ">
       <label for="inputZip">Zip</label>
-      <input type="Number" class="form-control" name="zip" onChange={handlechange} />
+      <input type="Number" class="form-control" name="zip" placeholder="ZIP" onChange={handlechange} />
     </div>
   </div>
   

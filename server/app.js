@@ -28,11 +28,11 @@ app.use(session({ //to generate sessions;
     key:"userID", 
     secret:"vouchdigital",
     resave:false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie:{
-        expires: 60*60*24,
+        maxAge: 1000*60*60*24,
     }
-}))
+}));
 
 const saltRounds = 10; //times salting for hashing 
 mongoose.connect("mongodb://localhost:27017/addressbook") //database url (mongodb)
@@ -143,7 +143,7 @@ app.post("/login",async (req,res)=>{ //hadnling login request
         if(response){
             const id=User._id
         const token=jwt.sign({id},"jwtsecret",{ // signing JWT request, generating token
-        expiresIn: 60*60*24, // setting expire time to 1 day
+        expiresIn: 1000*60*60*24 // setting expire time to 1 day
         })
             req.session.user=User;   // sending user current status 
             res.json({auth: true,token:token});

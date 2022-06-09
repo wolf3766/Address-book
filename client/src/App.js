@@ -19,8 +19,8 @@ function App() {
     <Route path="/" element={<Contacts />} />
     <Route path="/register" element={<Register />} />
     <Route path="/login" element={<Login />} />
-    <Route path='add' element={<Addcontact />} />
-    <Route path="contact" element={<Contacts />} />
+    <Route path='/add' element={<Addcontact />} />
+    <Route path="/contact" element={<Contacts />} />
 
     </Routes>
     </BrowserRouter>
