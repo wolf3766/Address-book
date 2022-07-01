@@ -1,4 +1,8 @@
-﻿# vouch digital addressbook
+Autherization using JWT, Authentication using bcrypt. 
+
+
+
+# vouch digital addressbook
 
 login Page 
 
